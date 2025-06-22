@@ -15,9 +15,11 @@
     <body class="bg-gray-100 text-[#1b1b18]">
 
         @session('success')
+        <div class="m-4">
             <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
                 <span class="block sm:inline">{{ session('success') }}</span>
             </div>
+        </div>
         @endsession
        
         <div class="container mx-auto p-6 lg:p-8">
