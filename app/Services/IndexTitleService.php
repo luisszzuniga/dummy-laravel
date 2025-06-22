@@ -8,6 +8,6 @@ class IndexTitleService
 {
     public function getAll()
     {
-        return IndexTitle::select('label')->get();
+        return IndexTitle::select('id', 'label')->get();
     }
 }
