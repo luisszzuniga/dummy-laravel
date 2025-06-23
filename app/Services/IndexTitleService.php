@@ -10,4 +10,9 @@ class IndexTitleService
     {
         return IndexTitle::select('id', 'label')->get();
     }
+
+    public function delete(int $id)
+    {
+        IndexTitle::destroy($id);
+    }
 }
