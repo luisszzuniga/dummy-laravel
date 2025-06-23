@@ -31,6 +31,11 @@
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 ease-in-out">
                         <div class="p-6">
                             <h2 class="text-2xl font-bold text-gray-900">{{ $title->label }}</h2>
+                            <form action="{{ route('index-titles.delete', $title->id) }}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger" style="position: absolute; top: 10px; right: 10px;">X</button>
+                            </form>
                         </div>
                     </div>
                 @endforeach
