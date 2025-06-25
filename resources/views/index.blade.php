@@ -28,7 +28,12 @@
             </h1>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @foreach ($titles as $title)
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 ease-in-out">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 ease-in-out relative">
+                        <form method="POST" action="{{ route('index-titles.destroy', $title->id) }}" class="absolute top-2 right-2 z-10">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" title="Supprimer" class="text-red-500 hover:text-red-700 text-xl font-bold cursor-pointer">&times;</button>
+                        </form>
                         <div class="p-6">
                             <h2 class="text-2xl font-bold text-gray-900">{{ $title->label }}</h2>
                         </div>
